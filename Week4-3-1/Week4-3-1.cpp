@@ -1,4 +1,6 @@
-#include <algorithm>
+// Week4-3-1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
 #include <iostream>
 #include <cmath>
 #include <sstream>
@@ -204,138 +206,13 @@ int main()
         }
     }
 
-    {
-        istringstream input("5/7");
-        Rational r;
-        input >> r;
-        bool equal = r == Rational(5, 7);
-        if (!equal) {
-            cout << "5/7 is incorrectly read as " << r << endl;
-            return 2;
-        }
-    }
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
 
-    {
-        istringstream input("5/7 10/8");
-        Rational r1, r2;
-        input >> r1 >> r2;
-        bool correct = r1 == Rational(5, 7) && r2 == Rational(5, 4);
-        if (!correct) {
-            cout << "Multiple values are read incorrectly: " << r1 << " " << r2 << endl;
-            return 3;
-        }
-
-        input >> r1;
-        input >> r2;
-        correct = r1 == Rational(5, 7) && r2 == Rational(5, 4);
-        if (!correct) {
-            cout << "Read from empty stream shouldn't change arguments: " << r1 << " " << r2 << endl;
-            return 4;
-        }
-    }
-
-    {
-        const Rational r(3, 10);
-        if (r.Numerator() != 3 || r.Denominator() != 10) {
-            cout << "Rational(3, 10) != 3/10" << endl;
-            return 1;
-        }
-    }
-
-    {
-        const Rational r(8, 12);
-        if (r.Numerator() != 2 || r.Denominator() != 3) {
-            cout << "Rational(8, 12) != 2/3" << endl;
-            return 2;
-        }
-    }
-
-    {
-        const Rational r(-4, 6);
-        if (r.Numerator() != -2 || r.Denominator() != 3) {
-            cout << "Rational(-4, 6) != -2/3" << endl;
-            return 3;
-        }
-    }
-
-    {
-        const Rational r(4, -6);
-        if (r.Numerator() != -2 || r.Denominator() != 3) {
-            cout << "Rational(4, -6) != -2/3" << endl;
-            return 3;
-        }
-    }
-
-    {
-        const Rational r(0, 15);
-        if (r.Numerator() != 0 || r.Denominator() != 1) {
-            cout << "Rational(0, 15) != 0/1" << endl;
-            return 4;
-        }
-    }
-
-    {
-        const Rational defaultConstructed;
-        if (defaultConstructed.Numerator() != 0 || defaultConstructed.Denominator() != 1) {
-            cout << "Rational() != 0/1" << endl;
-            return 5;
-        }
-    }
-
-    {
-        Rational r1(4, 6);
-        Rational r2(2, 3);
-        bool equal = r1 == r2;
-        if (!equal) {
-            cout << "4/6 != 2/3" << endl;
-            return 1;
-        }
-    }
-
-    {
-        Rational a(2, 3);
-        Rational b(4, 3);
-        Rational c = a + b;
-        bool equal = c == Rational(2, 1);
-        if (!equal) {
-            cout << "2/3 + 4/3 != 2" << endl;
-            return 2;
-        }
-    }
-
-    {
-        Rational a(5, 7);
-        Rational b(2, 9);
-        Rational c = a - b;
-        bool equal = c == Rational(31, 63);
-        if (!equal) {
-            cout << "5/7 - 2/9 != 31/63" << endl;
-            return 3;
-        }
-    }
-
-    {
-        Rational a(2, 3);
-        Rational b(4, 3);
-        Rational c = a * b;
-        bool equal = c == Rational(8, 9);
-        if (!equal) {
-            cout << "2/3 * 4/3 != 8/9" << endl;
-            return 1;
-        }
-    }
-
-    {
-        Rational a(5, 4);
-        Rational b(15, 8);
-        Rational c = a / b;
-        bool equal = c == Rational(2, 3);
-        if (!equal) {
-            cout << "5/4 / 15/8 != 2/3" << endl;
-            return 2;
-        }
-    }
-
-    cout << "OK" << endl;
-    return 0;
-}
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
